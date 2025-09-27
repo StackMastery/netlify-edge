@@ -46,7 +46,7 @@ export default async (req: Request) => {
         // Keep users on our proxy prefix
         outHeaders.set(
           "location",
-          "/fp" + locURL.pathname + (locURL.search || "")
+          "/" + locURL.pathname + (locURL.search || "")
         );
       }
     } catch {
@@ -99,4 +99,4 @@ export default async (req: Request) => {
 };
 
 // Match /fp/* routes
-export const config = { pattern: "^/fp(/.*)?$" };
+export const config = { pattern: "^(/.*)?$" };
